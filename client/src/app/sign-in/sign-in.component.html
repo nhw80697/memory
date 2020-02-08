@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-4 col-xs-4"></div>
+  <div class="col-md-4 col-xs-4">
+    <form>
+      <div class="form-group">
+        <h2 class="text-center">שואל ומשיב תוכנת עזר לשינון וחזרה </h2>
+        <label for="nickname">שם משתמש:</label>
+        <input type="text" class="form-control" id="nickname"><br>
+        <label for="pwd">סיסמא:</label>
+        <input type="password" class="form-control" id="pwd"><br>
+        <div class="row">
+            <div class="col-md-6 col-xs-6">
+                <button type="submit" class="btn btn-default btn-block" (click)="onClickSginInYourAccount()">כניסה</button>
+            </div>
+            <div class="col-md-6 col-xs-6">
+              <button type="submit" class="btn btn-default btn-block" (click)="onClickReturn()"><<</button>
+            </div>
+          </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-4 col-xs-4"></div>
+</div>
