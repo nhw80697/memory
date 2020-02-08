@@ -8,19 +8,7 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 
 export class SignInComponent implements OnInit {
-name:string = "";
 
-@Output() SginIn = new EventEmitter();
-@Output() askOrAnswer = new EventEmitter();
-
-
-onClickReturn(){
-  this.SginIn.emit(false)
-}
-
-onClickSginInYourAccount(){
-  this.askOrAnswer.emit(true);
-}
 
   constructor() { }
 

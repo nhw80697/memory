@@ -6,3 +6,8 @@
 body{
     direction: rtl;
 }
+
+a:hover{
+  text-decoration: none;
+}
+
