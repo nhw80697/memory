@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AskAQuestionComponent implements OnInit {
 
+  addQuestion(a,b){
+    
+  }
+
   constructor() { }
 
   ngOnInit(): void {
