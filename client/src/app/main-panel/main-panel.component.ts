@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { DataCheckingNamesService } from '../data-checking-names.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-main-panel',
@@ -7,8 +9,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class MainPanelComponent implements OnInit {
 
-
   constructor() { }
+  
 
   ngOnInit() {
   }

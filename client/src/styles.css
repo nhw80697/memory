@@ -2,12 +2,13 @@
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~bootstrap/dist/css/bootstrap-theme.min.css';
+@font-face {
+    font-family: EFT_Lampner;
+    src: url(fonts/EFT_Lampner.ttf);
+  }
 
 body{
     direction: rtl;
-}
-
-a:hover{
-  text-decoration: none;
+    font-family: EFT_Lampner;
 }
 

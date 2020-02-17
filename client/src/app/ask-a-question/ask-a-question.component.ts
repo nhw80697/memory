@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AskAQuestionComponent implements OnInit {
 
   addQuestion(a,b){
-    
+    alert ("האם להוסיף את השאלה: שאלה:" + a + "תשובה: " + b + "?");
   }
 
   constructor() { }
