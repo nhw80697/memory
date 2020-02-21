@@ -12,9 +12,10 @@ import { AskOrAnswerComponent } from './ask-or-answer/ask-or-answer.component';
 import { AskAQuestionComponent } from './ask-a-question/ask-a-question.component';
 
 import { DataCheckingNamesService } from './data-checking-names.service';
+import { MainBarComponent } from './main-bar/main-bar.component';
 
 @NgModule({
-  declarations: [ AppComponent, HelloComponent, SignInComponent, MainPanelComponent, AskOrAnswerComponent, AskAQuestionComponent],
+  declarations: [ AppComponent, HelloComponent, SignInComponent, MainPanelComponent, AskOrAnswerComponent, AskAQuestionComponent, MainBarComponent],
   imports:      [ BrowserModule, FormsModule,
     AppRoutingModule, HttpClientModule,
     ],

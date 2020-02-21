@@ -1,19 +1,28 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}) );
+app.use(cookieParser())
 
-app.listen(3000, () => {
- console.log('Example app listening on port 3000!');
-});
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-app.get('/moshe', (req, res) => {
-    res.send('Hello Moshe!');
-});
 
-myJson = [{"name": "יוסי", "password": "1234"}];
-app.all('/CheckSignIn', (req, res) => {
-    res.cookie('cookieName', 'cookieValue');
-    res.send(myJson);
+
+
+app.all("/*", function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    next();
+  });
+
+
+app.post('/CheckSignIn', (req, res) => {
+    console.log(req.body);
+    if(req.body.name == "יוסי" && req.body.password == "1234"){res.send(true)}
+    else {res.send(false)} 
 });
    
+app.listen(3000, () => {
+    console.log('Example app listening on port 3000!');
+   });

@@ -4,12 +4,17 @@
     <form>
       <div class="form-group">
         <label for="nickname">שם משתמש:</label>
-        <input type="text" class="form-control" id="nickname"><br>
+        <input type="text" class="form-control" id="nickname" [(ngModel)]="user.name" name="name"
+        ><br>
         <label for="pwd">סיסמא:</label>
-        <input type="password" class="form-control" id="pwd"><br>
+        <input type="password" class="form-control" id="pwd" [(ngModel)]="user.password" name="password"
+        ><br>
+        <p style="color: red; font-weight: bold;">{{warning}}</p>
         <div class="row">
             <div class="col-md-6 col-xs-6">
-               <a [routerLink]="['/AskOrAnswer']"><button type="submit" class="btn btn-default btn-block">כניסה</button></a>  
+               <!-- <a [routerLink]="['/AskOrAnswer']"><button type="submit" class="btn btn-default btn-block" (click)="onSginIn()">כניסה</button></a>   -->
+               <button  type="submit" class="btn btn-default btn-block" (click)="onSginIn()">כניסה</button>
+
             </div>
            <div class="col-md-6 col-xs-6">
                <a [routerLink]="['/MainPanelComponent']"><button type="submit" class="btn btn-default btn-block"><<</button></a>  
