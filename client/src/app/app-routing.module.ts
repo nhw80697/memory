@@ -9,6 +9,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { MainPanelComponent } from './main-panel/main-panel.component';
 import { AskOrAnswerComponent } from './ask-or-answer/ask-or-answer.component';
 import { AskAQuestionComponent } from './ask-a-question/ask-a-question.component';
+import { NewUserComponent } from './new-user/new-user.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainPanelComponent },
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   {path: 'SginIn', component: SignInComponent},
   {path: 'AskOrAnswer', component: AskOrAnswerComponent},
   {path: 'AskAQuestion', component: AskAQuestionComponent},
+  {path: 'newUser', component: NewUserComponent},
   {path: '**', redirectTo: '/not-found'}
 ];
 

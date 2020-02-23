@@ -21,7 +21,9 @@ export class DataCheckingNamesService {
   checUser(user){return this.http.post(this.URL, JSON.stringify(user), {
     headers: this.headers})}
 
- 
-
   getUsers() {return this.http.get(this.URL);}
+
+  createAnAccount(user){
+    return this.http.post('http://localhost:3000/creatUser', JSON.stringify(user), {
+      headers: this.headers})}
 }
