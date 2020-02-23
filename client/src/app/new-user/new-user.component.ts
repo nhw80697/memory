@@ -22,24 +22,35 @@ export class NewUserComponent implements OnInit {
   constructor(public dataCheckingNamesService:DataCheckingNamesService,private router: Router) { }
 
   onCreateAnAccount(){
-    this.dataCheckingNamesService.createAnAccount(this.user)
-    .subscribe(
-      (res) =>{
-        console.log("הצליח!");
-        if(res == true){this.message = "חשבונך נוצר בהצלחה!"}
-      } 
-    );
-  }
+    
+      if (this.user.name == "" || this.user.password == "" || this.user.password2 == "" || this.user.email == "") {
+          this.message = "אחד מהשדות או יותר בטופס חסרים"
+      }else{
+        this.dataCheckingNamesService.createAnAccount(this.user)
+            .subscribe(
+              (res) =>{
+                console.log("הצליח!");
+                if(res == true){this.message ="חשבונך נוצר בהצלחה! תיכף הנך צולל פנימה..."}
+                setTimeout(() => {
+                  this.router.navigateByUrl("/AskOrAnswer")
+                }, 3000);
+              } 
+            );
+      }
+    };
 
-  onKeyPas2(event: any) { 
+
+    
+  
+
+  onKeyPas2(event) { 
     if (this.user.password != this.user.password2){
       this.message = "הסיסמאות אינן תואמות" ;
-    }
+    }else{this.message = ""};
     
   }
 
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-}
+  }

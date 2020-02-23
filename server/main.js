@@ -26,7 +26,7 @@ app.post('/CheckSignIn', (req, res) => {
 
 app.post('/creatUser', (req, res) => {
     console.log(req.body);
-    await creatUser.newUser(req.body.name, req.body.password, req.body.email);
+    creatUser.newUser(req.body.name, req.body.password, req.body.email);
     res.send(true);
 });
    

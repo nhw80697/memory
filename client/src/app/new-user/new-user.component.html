@@ -12,7 +12,7 @@
           <input type="password" class="form-control" id="pwd" [(ngModel)]="user.password" name="password"
           ><br>
           <label for="pwd">הקלד שוב את הסיסמא:</label>
-          <input type="password" class="form-control" id="pwd2" [(ngModel)]="user.password2" name="password2" (keyup)="onKey($event)"
+          <input type="password" class="form-control" id="pwd2" [(ngModel)]="user.password2" name="password2" (keyup)="onKeyPas2($event)"
           ><br>
           <p style="color: red; font-weight: bold;">{{message}}</p>
           <div class="row">
