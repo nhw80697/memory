@@ -13,7 +13,8 @@ export class NewUserComponent implements OnInit {
   user = {
     name: "",
     email: "",
-    password: ""
+    password: "",
+    password2: ""
   };
 
 
@@ -29,6 +30,14 @@ export class NewUserComponent implements OnInit {
       } 
     );
   }
+
+  onKeyPas2(event: any) { 
+    if (this.user.password != this.user.password2){
+      this.message = "הסיסמאות אינן תואמות" ;
+    }
+    
+  }
+
 
   ngOnInit(): void {
   }

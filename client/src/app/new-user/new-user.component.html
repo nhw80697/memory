@@ -11,6 +11,9 @@
           <label for="pwd">סיסמא:</label>
           <input type="password" class="form-control" id="pwd" [(ngModel)]="user.password" name="password"
           ><br>
+          <label for="pwd">הקלד שוב את הסיסמא:</label>
+          <input type="password" class="form-control" id="pwd2" [(ngModel)]="user.password2" name="password2" (keyup)="onKey($event)"
+          ><br>
           <p style="color: red; font-weight: bold;">{{message}}</p>
           <div class="row">
               <div class="col-md-6 col-xs-6">
