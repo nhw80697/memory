@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
 const creatUser = require('./CreateUser');
@@ -6,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}) );
 app.use(cookieParser())
-
+app.use(session({'secret': '203564778'}))
 
 
 
@@ -19,12 +20,15 @@ app.all("/*", function(req, res, next){
 
 
 app.post('/CheckSignIn', (req, res) => {
+    req.session.name = 'Flavio'
+    console.log(req.session.name);
     console.log(req.body);
     if(req.body.name == "יוסי" && req.body.password == "1234"){res.send(true)}
     else {res.send(false)} 
 });
 
 app.post('/creatUser', (req, res) => {
+    console.log(req.session);
     console.log(req.body);
     creatUser.newUser(req.body.name, req.body.password, req.body.email);
     res.send(true);
