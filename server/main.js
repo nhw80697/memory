@@ -19,15 +19,14 @@ app.all("/*", function(req, res, next){
   });
 
 
-app.post('/CheckSignIn', (req, res) => {
-    req.session.name = 'Flavio'
-    console.log(req.session.name);
+app.post('/check-sign-in', (req, res) => {
+
     console.log(req.body);
     if(req.body.name == "יוסי" && req.body.password == "1234"){res.send(true)}
     else {res.send(false)} 
 });
 
-app.post('/creatUser', (req, res) => {
+app.post('/creat-user', (req, res) => {
     console.log(req.session);
     console.log(req.body);
     creatUser.newUser(req.body.name, req.body.password, req.body.email);
@@ -37,3 +36,6 @@ app.post('/creatUser', (req, res) => {
 app.listen(3000, () => {
     console.log('Example app listening on port 3000!');
    });
+
+
+  
