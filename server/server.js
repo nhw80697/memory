@@ -8,7 +8,7 @@ app.use(cookieParser());
 app.get('/', (req, res) => {
     console.log(req.cookies)
     if(!req.cookies['this-is-session-cookie']) {
-        res.cookie('this-is-session-cookie', getRandomString(50))
+        res.cookie('session-cookie', getRandomString(50))
     }
     res.send('hello')
 })
