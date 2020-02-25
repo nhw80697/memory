@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-ask-a-question',
@@ -6,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ask-a-question.component.css']
 })
 export class AskAQuestionComponent implements OnInit {
-
-  addQuestion(a,b){
-    alert ("האם להוסיף את השאלה: שאלה:" + a + "תשובה: " + b + "?");
+  handleChange(){
+    this.router.navigateByUrl("/ask-question-amrican")
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

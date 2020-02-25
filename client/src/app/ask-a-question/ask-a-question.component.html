@@ -3,8 +3,12 @@
 	<div class="col-md-4 col-xs-4 center-block">
 		<div class="row ">
 			<div class="form-group">
-				<input type="checkbox" checked data-toggle="toggle"><br>
-				  
+				<label class="radio-inline">רגיל
+					<input type="radio" name="inlineRadioOptions" value="option1" checked>
+				  </label>
+				  <label class="radio-inline">אמריקאי
+					<input type="radio" name="inlineRadioOptions" (change)="handleChange()" value="option2">
+				  </label><br><br>		
 				<label for="ask">שאלה:</label>
 				<textarea class="form-control" rows="5" id="ask" #question></textarea>
 			</div>
