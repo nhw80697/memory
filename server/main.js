@@ -9,6 +9,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}) );
 app.use(cookieParser())
 app.use(session({secret: 'ssshhhhh',saveUninitialized: true,resave: true}));
+
+app.post("/דדד*", function(req,res,next){
+    if (!req.session.password){
+        res.render('http://localhost:4200/newUser');
+    };
+    next();
+    console.log(req.session.name)
+})
+
 app.use('/main', mainReq);
 
 
