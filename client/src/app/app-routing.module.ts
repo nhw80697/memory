@@ -18,6 +18,7 @@ const appRoutes: Routes = [
   {path: 'MainPanelComponent', component: MainPanelComponent },
   {path: 'SginIn', component: SignInComponent},
   {path: 'AskOrAnswer', component: AskOrAnswerComponent},
+  {path: 'ask-or-answer', component: AskOrAnswerComponent},
   {path: 'ask-question', component: AskAQuestionComponent},
   {path: 'ask-question-amrican', component: AskAQuestionAmericanComponent},
   {path: 'signup', component: NewUserComponent},
