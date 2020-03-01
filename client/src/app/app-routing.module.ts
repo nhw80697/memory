@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   {path: 'AskOrAnswer', component: AskOrAnswerComponent},
   {path: 'ask-question', component: AskAQuestionComponent},
   {path: 'ask-question-amrican', component: AskAQuestionAmericanComponent},
-  {path: 'newUser', component: NewUserComponent},
+  {path: 'signup', component: NewUserComponent},
   {path: '**', redirectTo: '/not-found'}
 ];
 
