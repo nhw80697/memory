@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataCheckingNamesService } from '../data-checking-names.service';
 
 @Component({
   selector: 'app-main-bar',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-bar.component.css']
 })
 export class MainBarComponent implements OnInit {
+  
+  
+  constructor(public dataCheckingNamesService:DataCheckingNamesService) {}
 
-  constructor() { }
 
+  
   ngOnInit(): void {
   }
 

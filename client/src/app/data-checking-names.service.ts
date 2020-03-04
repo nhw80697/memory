@@ -12,18 +12,27 @@ export class DataCheckingNamesService {
 
   constructor(public http: HttpClient) { }
   
-  URL = 'http://localhost:3000/check-sign-in';
 
+  nameInTheBar = "שלום ";
+  URL = 'http://localhost:3000/check-sign-in';
+  showUserName = false;
+  
   headers = new HttpHeaders()
           .set('Authorization', 'my-auth-token')
           .set('Content-Type', 'application/json');
 
-  checUser(user){return this.http.post('http://localhost:3000/main/check-sign-in', JSON.stringify(user), {
-    headers: this.headers})}
+  checUser(user){return this.http.post('http://localhost:3000/login', JSON.stringify(user), {
+    headers: this.headers})
+  
+  }
 
   getUsers() {return this.http.get(this.URL);}
 
+
   createAnAccount(user){
-    return this.http.post('http://localhost:3000/main/creat-user', JSON.stringify(user), {
+    return this.http.post('http://localhost:3000/signup', JSON.stringify(user), {
       headers: this.headers})}
+  // createAnAccount(user){
+  //   return this.http.post('http://localhost:3000/main/creat-user', JSON.stringify(user), {
+  //     headers: this.headers})}
 }

@@ -12,11 +12,12 @@ import { AskAQuestionComponent } from './ask-a-question/ask-a-question.component
 import { NewUserComponent } from './new-user/new-user.component';
 import { AskAQuestionAmericanComponent } from './ask-a-question-american/ask-a-question-american.component';
 import { from } from 'rxjs';
-
+  
 const appRoutes: Routes = [
   {path: '', component: MainPanelComponent },
   {path: 'MainPanelComponent', component: MainPanelComponent },
   {path: 'SginIn', component: SignInComponent},
+  {path: 'login', component: SignInComponent},
   {path: 'AskOrAnswer', component: AskOrAnswerComponent},
   {path: 'ask-or-answer', component: AskOrAnswerComponent},
   {path: 'ask-question', component: AskAQuestionComponent},

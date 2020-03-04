@@ -31,6 +31,9 @@ export class SignInComponent implements OnInit {
           this.warning = "שם המשתמש או הסיסמא שגויים";}
           else
           {this.warning = "";
+          this.dataCheckingNamesService.nameInTheBar += res['userName'];
+          this.dataCheckingNamesService.showUserName = true;
+          console.log( this.dataCheckingNamesService.nameInTheBar);
           this.router.navigateByUrl("/AskOrAnswer");}
         } 
       );
