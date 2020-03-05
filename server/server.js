@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}) );
 app.use(cookieParser())
-app.use(session({secret: 'ssshhhhh',saveUninitialized: true,resave: true}));
+app.use(session({secret: 'ssshhhhh', cookie: { maxAge: 60000 }}));
 
 
 app.all("/*", function(req, res, next){
@@ -54,7 +54,9 @@ app.post('/login',(req, res) => {
                     // res.redirect('/login');
                 }else{
                     // req.session.user = username;
-                    // req.session.password = password;
+                    // req.session.password = 123;
+                    if(req.session.views > 0){req.session.views++}else{req.session.views = 1};
+                    console.log(req.session.views);
                     console.log("ניסיון כניסה מוצלח");
                     resJson = {'mess': "נמצא!", BOOL: true, 'userName':username};
                     res.send(resJson);

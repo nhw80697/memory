@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-ask-or-answer',
   templateUrl: './ask-or-answer.component.html',
