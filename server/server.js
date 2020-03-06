@@ -21,7 +21,7 @@ app.all("/*", function(req, res, next){
   });
 
 app.post('/signup', (req, res) => {
-    console.log(req.session);
+    // console.log(req.session);
     console.log(req.body);
     creatUser.newUser(req.body.name, req.body.password, req.body.email);
     res.send(true);
