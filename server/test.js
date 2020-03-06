@@ -1,27 +1,25 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
+const session = require('express-session')
+// const cookieParser = require('cookie-parser');
 
 const app = express();
 
-app.use(cookieParser());
-
-app.get('/', (req, res) => {
-    console.log(req.cookies)
-    if(!req.cookies['session-cookie']) {
-        res.cookie('session-cookie', getRandomString(50))
-    }
-    res.send('hello')
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
+ 
+// Access the session as req.session
+app.get('/', function(req, res, next) {
+  if (req.session.views) {
+    req.session.views++
+    res.setHeader('Content-Type', 'text/html')
+    res.write('<p>views: ' + req.session.views + '</p>')
+    res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
+    res.end()
+  } else {
+    req.session.views = 1
+    res.end('welcome to the session demo. refresh!')
+  }
 })
-app.listen(4000)
-console.log("open http://localhost:4000/")
 
-function getRandomString(count) {
-    var randomStringChars = "abcdefghijklmnopqrstuvwxyz0123456789";
-
-    var out = '';
-
-    while(count-- > 0){
-        out += randomStringChars[Math.floor(randomStringChars.length*Math.random())];
-    }
-    return out;
-}
+app.listen(3001, () => {
+    console.log('Example app listening on port 3001!');
+   });
