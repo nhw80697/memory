@@ -4,12 +4,24 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
 const creatUser = require('./CreateUser');
 const mainReq = require('./routes/main-req');
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}) );
-app.use(cookieParser())
-app.use(session({secret: 'ssshhhhh',saveUninitialized: true,resave: true}));
+app.use(cookieParser());
+app.use(session({'secret': '343ji43j4n3jn4jk3n'}));
+
+app.post('/*', function(req,res,next){
+    req.session.name = "יוסי";
+    console.log(req.session);
+    next();
+})
+
+
 app.use('/main', mainReq);
+
+var sess;
+
 
 
 
