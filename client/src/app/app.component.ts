@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'my-app',
@@ -10,6 +10,7 @@ export class AppComponent  {
   showMainPanel:boolean = true;
   ShowSginIn:boolean = false;
   showAskOrAnswer:boolean = false;
+  
 
   clickShowSginIn(bool){
     this.ShowSginIn = bool;

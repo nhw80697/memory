@@ -8,6 +8,7 @@ const mainReq = require('./routes/main-req');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}) );
+<<<<<<< HEAD
 app.use(cookieParser());
 app.use(session({'secret': '343ji43j4n3jn4jk3n'}));
 
@@ -18,6 +19,19 @@ app.post('/*', function(req,res,next){
 })
 
 
+=======
+app.use(cookieParser())
+app.use(session({secret: 'ssshhhhh',saveUninitialized: true,resave: true}));
+
+app.post("/דדד*", function(req,res,next){
+    if (!req.session.password){
+        res.render('http://localhost:4200/newUser');
+    };
+    next();
+    console.log(req.session.name)
+})
+
+>>>>>>> 3e8b7860f9222a7d37b7a47986c6f63864a3153b
 app.use('/main', mainReq);
 
 var sess;

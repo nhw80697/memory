@@ -19,7 +19,7 @@ import { AskAQuestionAmericanComponent } from './ask-a-question-american/ask-a-q
 @NgModule({
   declarations: [ AppComponent, HelloComponent, SignInComponent, MainPanelComponent, AskOrAnswerComponent, AskAQuestionComponent, MainBarComponent, NewUserComponent, AskAQuestionAmericanComponent],
   imports:      [ BrowserModule, FormsModule,
-    AppRoutingModule, HttpClientModule,
+    AppRoutingModule, HttpClientModule, 
     ],
     providers:[],
   bootstrap:    [ AppComponent ]

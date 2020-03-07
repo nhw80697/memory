@@ -25,7 +25,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/fonts/EFT_Lampner OT.ttf"
+              "src/fonts/EFT_Lampner OT.ttf",
             ],
             "scripts": []
           },

@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/";
 const client = new MongoClient(url,  { useUnifiedTopology: true });
 
-exports.newUser = async function newUser(name,pas,email){
+exports.saveResponsa = async function saveResponsa(name,pas,email){
     MongoClient.connect(url, async function(err, db) {
         if (err) throw err;
         var dbo = db.db("ask");

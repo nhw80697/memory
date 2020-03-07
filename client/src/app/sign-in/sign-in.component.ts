@@ -27,10 +27,13 @@ export class SignInComponent implements OnInit {
     this.dataCheckingNamesService.checUser(this.user)
       .subscribe(
         (res) => {console.log(res);
-          if(res == false){
+          if(res['BOOL'] == false){
           this.warning = "שם המשתמש או הסיסמא שגויים";}
           else
           {this.warning = "";
+          this.dataCheckingNamesService.nameInTheBar += res['userName'];
+          this.dataCheckingNamesService.showUserName = true;
+          console.log( this.dataCheckingNamesService.nameInTheBar);
           this.router.navigateByUrl("/AskOrAnswer");}
         } 
       );

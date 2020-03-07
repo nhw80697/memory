@@ -16,9 +16,14 @@ router.all("/*", function(req, res, next){
 
 
 router.post('/check-sign-in', (req, res) => {
+    req.session.password = req.body.password;
     console.log(req.body);
-    if(req.body.name == "יוסי" && req.body.password == "1234"){res.send(true)}
-    else {res.send(false)} 
+    req.session.password;
+    resJson = {'BOOL': false, 'name':req.body.name};
+    if(req.body.name == "יוסי" && req.body.password == "1234"){resJson['BOOL'] = true};
+    res.send(resJson);
+    // if(req.body.name == "יוסי" && req.body.password == "1234"){res.send(true)}
+    // else {res.send(false)} 
 });
 
 router.post('/creat-user', (req, res) => {
