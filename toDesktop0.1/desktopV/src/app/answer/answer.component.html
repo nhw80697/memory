@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-md-4 col-xs-4"></div>
+	<div class="col-md-4 col-xs-4 center-block">
+		<div class="row" *ngFor="let post of posts">
+            <br><br>
+			<div class="form-group" >
+					
+				<label for="ask">שאלה:</label>
+				<p style="font-size: 16px; font-weight: bold;">{{post.addPost.question}}</p>
+            </div>
+            <div >
+
+                <div class="flip-card" style="display:inline" style="float: right;">
+                    <textarea class="form-control flip-card" placeholder="כתוב כאן את התשובה..." style="background-color: white; width: 100%;"></textarea>
+                  </div>
+                  <div class="flip-card" style="display:inline" style="float: right;">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <p>לחץ כאן כדי לראות את התשובה...</p>
+                      </div>
+                      <div class="flip-card-back">
+                        <p>{{post.addPost.answer}}</p>
+                      </div>
+                    </div>
+                  </div>
+                 
+                
+            </div>
+            
+		</div>
+		<div class="col-md-6 col-xs-6">
+		</div>
+		<div class="col-md-6 col-xs-6">
+		</div>
+		<div class="col-md-4 col-xs-4"></div>
+	</div>

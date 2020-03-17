@@ -5,14 +5,14 @@
         <img alt="Brand" src="assets/img/logo.png">
         <h3 style="display: inline;"> שואל ומשיב</h3>
       </div>
-      <ul class="nav navbar-nav navbar-left" *ngIf="!this.dataCheckingNamesService.showUserName">
+      <ul class="nav navbar-nav navbar-left" *ngIf="!this.mainService.showUserName">
         <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> צור חשבון</a></li>
         <li><a href="/SginIn"><span class="glyphicon glyphicon-log-in"></span> כניסה</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-left" *ngIf="this.dataCheckingNamesService.showUserName" style="font-weight: bold; margin-top: 10px; margin-left: 10px;font-size: 14px;">
+      <ul class="nav navbar-nav navbar-left" style="font-weight: bold; margin-top: 10px; margin-left: 10px;font-size: 14px;">
         <li><span class="glyphicon glyphicon-log-in"></span> צא</li>
         <li></li>
-        <li style="margin-left: 9px;">{{this.dataCheckingNamesService.nameInTheBar}},</li>
+        <li style="margin-left: 9px;">{{this.mainService.nameInTheBar}},</li>
       </ul>
 
     </div><!-- /.container-fluid -->

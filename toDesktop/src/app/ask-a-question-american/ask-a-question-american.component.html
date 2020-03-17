@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="col-md-4 col-xs-4"></div>
+	<div class="col-md-4 col-xs-4 center-block">
+		<div class="row ">
+			<div class="form-group">
+				<label class="radio-inline">רגיל
+					<input type="radio" name="inlineRadioOptions" (change)="handleChange()" value="option1" >
+				  </label>
+				  <label class="radio-inline">אמריקאי
+					<input type="radio" name="inlineRadioOptions" value="option2" checked>
+				  </label><br><br>		
+				<label for="ask">שאלה:</label>
+				<textarea class="form-control" rows="3" id="ask" #question></textarea>
+			</div>
+            <button type="submit" class="btn btn-default btn-block" (click)="cloneTemplate()" >הוסף תשובות </button><br>
+            <p>(התוכנה תערבב את התשובות באופן אוטומטי לאחר השמירה)</p>
+            <p style="color: red; font-weight: bold;">{{warning}}</p>
+			<div class="form-group has-success has-feedback">
+                <textarea class="form-control" rows="2" id="ans" #answer></textarea>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputSuccess2Status" class="sr-only">(success)</span>
+            </div>
+            <div class="form-group has-error has-feedback">
+                <textarea class="form-control" rows="2" id="ans" #answerFalse></textarea>
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                <span id="inputError2Status" class="sr-only">(error)</span>
+              </div>
+            <ng-template #clone>
+                <div class="form-group has-error has-feedback">
+                    <textarea class="form-control" rows="2" id="ans" #answerFalse></textarea>
+                    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                    <span id="inputError2Status" class="sr-only">(error)</span>
+                  </div>
+            </ng-template>
+              <div #container></div>
+		</div><br>
+		<div class="col-md-6 col-xs-6">
+			<button type="submit" class="btn btn-default btn-block" >שמור</button>
+		</div>
+		<div class="col-md-6 col-xs-6">
+			<a [routerLink]="['/AskOrAnswer']"><button type="submit" class="btn btn-default btn-block"><<
+				</button></a>
+		</div>
+		<div class="col-md-4 col-xs-4"></div>
+	</div>

@@ -20,7 +20,7 @@ app.all("/*", function(req, res, next){
     next();
   });
 
-app.post('/signup', (req, res) => {
+app.post('/api/signup', (req, res) => {
     // console.log(req.session);
     console.log(req.body);
     creatUser.newUser(req.body.name, req.body.password, req.body.email);
@@ -28,7 +28,7 @@ app.post('/signup', (req, res) => {
 });
 
 
-app.post('/login',(req, res) => {
+app.post('/api/login',(req, res) => {
     let username = req.body.name;
     let password = req.body.password;
     console.log(username + " " + password)
@@ -65,9 +65,17 @@ app.post('/login',(req, res) => {
             })
         })
 
-app.post('/save',(req,res) => {
+app.post('/api/save',(req,res) => {
 
 })
+
+
+app.get('/api/test', (req,res)=>{
+    res.send("test!!!");
+});
+app.get('/test', (req,res)=>{
+    res.send("test!!!");
+});
 
 app.listen(3000, () => {
     console.log('Example app listening on port 3000!');

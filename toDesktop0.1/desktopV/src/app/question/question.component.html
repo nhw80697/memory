@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col-md-4 col-xs-4">
+		<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+			<!-- This is the tree node template for leaf nodes -->
+			<mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+			  <!-- use a disabled button to provide padding for tree leaf -->
+			  <button mat-icon-button disabled></button>
+			  {{node.name}}
+			</mat-tree-node>
+			<!-- This is the tree node template for expandable nodes -->
+			<mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+			  <button mat-icon-button matTreeNodeToggle
+					  [attr.aria-label]="'toggle ' + node.name">
+				<mat-icon class="mat-icon-rtl-mirror">
+				  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+				</mat-icon>
+			  </button>
+			  {{node.name}}
+			</mat-tree-node>
+		  </mat-tree>
+	</div>
+
+
+
+	<div class="col-md-4 col-xs-4 center-block">
+		<div class="row ">
+			<div class="form-group">
+				<label class="radio-inline">רגיל
+					<input type="radio" name="inlineRadioOptions" value="option1" checked>
+				  </label>
+				  <label class="radio-inline">אמריקאי
+					<input type="radio" name="inlineRadioOptions" (change)="handleChange()" value="option2">
+				  </label><br><br>
+				<label for="ask">שאלה:</label>
+				<textarea class="form-control" rows="5" id="ask" [(ngModel)]="question"></textarea>
+			</div>
+			
+			<div class="form-group">
+				<label for="ans">תשובה:</label>
+				<textarea class="form-control" rows="5" id="ans" [(ngModel)]="answer"></textarea>
+			</div>
+		</div>
+		<div class="col-md-6 col-xs-6">
+			<button type="submit" class="btn btn-default btn-block" (click)="Question()" >שמור</button>
+		</div>
+		<div class="col-md-6 col-xs-6">
+		</div>
+		<div class="col-md-4 col-xs-4"></div>
+	</div>
