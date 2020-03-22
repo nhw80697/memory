@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-4 col-xs-4">
+	</div>
+
+	<div class="col-md-4 col-xs-4" >
+        <h3 style="text-align: center;">:בחר את נושא השאלה</h3>
+		<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" dir="rtl">
+			<!-- This is the tree node template for leaf nodes -->
+			<mat-tree-node *matTreeNodeDef="let node"  style=" display: inline;">
+			  <!-- use a disabled button to provide padding for tree leaf -->
+              <div class="btn-group">
+              <button class="btn-default" name="{{node.name}}" (click)="selectCat($event)" style="color: red;">{{node.name}}</button>
+              </div>
+			</mat-tree-node>
+			<!-- This is the tree node template for expandable nodes -->
+			<mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding style="cursor: pointer">
+			  <p mat-icon-button matTreeNodeToggle
+					  [attr.aria-label]="'toggle ' + node.name">
+				<mat-icon class="mat-icon-rtl-mirror">
+				  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+				</mat-icon>
+			</p>
+			 {{node.name}}
+			</mat-tree-node>
+		  </mat-tree>
+    </div>
+    <div class="col-md-4 col-xs-4">
+	</div>
+    

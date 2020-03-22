@@ -25,7 +25,7 @@ app.all("/*", function(req, res, next){
     MongoClient.connect(url, async function(err, db) {
         if (err) throw err;
         var dbo = db.db("testtodesktop");
-        addPost = {question: req.body.question, answer: req.body.answer};
+        addPost = {question: req.body.question, answer: req.body.answer, cat: req.body.cat};
         dbo.collection('postes').insertOne({addPost}, function(err, res) {
             if (err) throw err;
             console.log("1 document inserted");
@@ -38,9 +38,10 @@ app.all("/*", function(req, res, next){
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("testtodesktop");
-        dbo.collection("postes").find({}).toArray(function(err, result) {
+        // var query = { } ;
+        dbo.collection("postes").find({"addPost.cat":req.body.cat}).toArray(function(err, result) {
           if (err) throw err;
-          console.log(result);
+          console.log(result.length);
           res.send(result);
           db.close();
         });

@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="col-md-4 col-xs-4"></div>
 	<div class="col-md-4 col-xs-4 center-block">
+    <h3>{{messege}}</h3>
 		<div class="row" *ngFor="let post of posts">
             <br><br>
 			<div class="form-group" >
-					
 				<label for="ask">שאלה:</label>
 				<p style="font-size: 16px; font-weight: bold;">{{post.addPost.question}}</p>
             </div>
@@ -23,6 +23,8 @@
                       </div>
                     </div>
                   </div>
+                  <ngb-rating [(rate)]="currentRate"></ngb-rating>
+                  <p>דרג את תשובתך</p>
                  
                 
             </div>

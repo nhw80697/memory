@@ -20,6 +20,11 @@ export class GeneralService {
         headers: this.headers})}
 
     viewQuestion(){
-      return this.http.post('http://localhost:3000/view-posts', {
+      return this.http.post('http://localhost:3000/view-posts', JSON.stringify(this.questionsToShow),{
         headers: this.headers})}
+
+
+        category = "";
+        asksQuestion = true;
+        questionsToShow = {cat: ""}
 }

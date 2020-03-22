@@ -5,16 +5,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatTreeFlatDataSource, MatTreeFlattener, MatTreeModule} from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
+import {MatDialogModule, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AppComponent } from './app.component';
 import { AskOrAnswerComponent } from './ask-or-answer/ask-or-answer.component';
 import { QuestionComponent } from './question/question.component';
 import { QuestionAmricanComponent } from './question-amrican/question-amrican.component';
+import { MessegeComponent } from './question/question.component';
 
 
 import { GeneralService } from './general.service';
 import { AnswerComponent } from './answer/answer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CategoryComponent } from './category/category.component';
 
 const appRoutes: Routes = [
   {path: '', component: AskOrAnswerComponent },
@@ -22,6 +28,7 @@ const appRoutes: Routes = [
   {path: 'question' , component: QuestionComponent },
   {path: 'question-amrican' , component: QuestionAmricanComponent },
   {path: 'answer' , component: AnswerComponent },
+  {path: 'category' , component: CategoryComponent },
   {path: '**', redirectTo: '/not-found'}
 ]
 
@@ -31,7 +38,9 @@ const appRoutes: Routes = [
     AskOrAnswerComponent,
     QuestionComponent,
     QuestionAmricanComponent,
-    AnswerComponent
+    AnswerComponent,
+    CategoryComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -40,12 +49,21 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatButtonModule,
+    NgbModule
   ],
   exports: [
     MatIconModule,
+    MatButtonModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }
+  ],
+  bootstrap: [AppComponent],
+  
+
 })
 export class AppModule { }
