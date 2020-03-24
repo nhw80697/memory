@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatDialogModule, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FlipModule } from 'ngx-flip';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 import { AppComponent } from './app.component';
@@ -21,6 +23,7 @@ import { GeneralService } from './general.service';
 import { AnswerComponent } from './answer/answer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryComponent } from './category/category.component';
+import { from } from 'rxjs';
 
 const appRoutes: Routes = [
   {path: '', component: AskOrAnswerComponent },
@@ -52,11 +55,15 @@ const appRoutes: Routes = [
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
-    NgbModule
+    NgbModule,
+    FlipModule,
+    MatMenuModule,
+    
   ],
   exports: [
     MatIconModule,
     MatButtonModule,
+    MatMenuModule,
   ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },

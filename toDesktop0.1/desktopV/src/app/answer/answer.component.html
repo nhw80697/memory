@@ -2,34 +2,61 @@
 	<div class="col-md-4 col-xs-4"></div>
 	<div class="col-md-4 col-xs-4 center-block">
     <h3>{{messege}}</h3>
-		<div class="row" *ngFor="let post of posts">
+		<!-- <div class="row" *ngFor="let post of posts"> -->
+      <div class="row" *ngIf="thereQuestions">
             <br><br>
 			<div class="form-group" >
-				<label for="ask">שאלה:</label>
-				<p style="font-size: 16px; font-weight: bold;">{{post.addPost.question}}</p>
-            </div>
-            <div >
-
-                <div class="flip-card" style="display:inline" style="float: right;">
-                    <textarea class="form-control flip-card" placeholder="כתוב כאן את התשובה..." style="background-color: white; width: 100%;"></textarea>
-                  </div>
-                  <div class="flip-card" style="display:inline" style="float: right;">
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <p>לחץ כאן כדי לראות את התשובה...</p>
-                      </div>
-                      <div class="flip-card-back">
-                        <p>{{post.addPost.answer}}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <ngb-rating [(rate)]="currentRate"></ngb-rating>
-                  <p>דרג את תשובתך</p>
+				<label for="ask">שאלה {{i + 1}}:</label>
+				<p style="font-size: 16px; font-weight: bold;">{{question1}}</p>
+      </div>
+      <div>
+        <div style="display:inline" style="float: right;">
+          <textarea class="form-control flip-card" placeholder="כתוב כאן את התשובה..." style="background-color: white; width: 100%;"></textarea>
+        </div>
+        <div style="display:inline" style="float: right;">
+          <ngx-flip [flip]="flip">
+            <div front class="front" (click)="rotate()">לחץ כאן לראות את התשובה</div>
+            <div back class="back" (click)="rotate()">{{answer1}}</div>
+          </ngx-flip>
+        </div>
+       </div><br>
+       <!-- <p style="display:inline-block">דרג את תשובתך</p>
+       <ngb-rating [(rate)]="currentRate"></ngb-rating> -->
+       
+<div class="center-block text-center" *ngIf="flip">
+  <h3 style="display:inline-block">איך ענית?</h3><br>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default" (click)="next()"><mat-icon>check</mat-icon></button>
+    <button type="button" class="btn btn-default" (click)="next()" style="font-size: 21px;">%</button>
+    <button type="button" class="btn btn-default" (click)="next()"><mat-icon>close</mat-icon></button>
+  </div>
+  <!-- <button mat-button><mat-icon>check</mat-icon></button>
+  <button mat-button style="font-size: 24px;">%</button>
+  <button mat-button><mat-icon>close</mat-icon></button> -->
+</div>
+       <!-- <div style="display: block;">
+         <button class="btn" (click)="back()"><mat-icon>arrow_right</mat-icon></button> 
+          {{i + 1}}
+          <button class="btn" (click)="next()"><mat-icon>arrow_left</mat-icon></button>
+       </div> -->
+      
+      </div><br>
+      
                  
                 
-            </div>
+           
             
-		</div>
+            
+            
+    </div>
+    <!-- טסט
+    <ngx-flip [flip]="flip">
+      <div front class="front">Front</div>
+      <div back class="back">Back</div>
+    </ngx-flip>
+    <br>
+    <button (click)="rotate()">Flip</button> -->
+    
 		<div class="col-md-6 col-xs-6">
 		</div>
 		<div class="col-md-6 col-xs-6">

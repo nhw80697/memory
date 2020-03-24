@@ -36,10 +36,12 @@ export class QuestionComponent implements OnInit {
   question = "";
   answer = "";
   category = this.generalService.category;
+  page = this.generalService.page;
 objQ = {
   question: "",
   answer: "",
-  cat: this.category
+  cat: this.category,
+  sub: this.page
 }
   handleChange(){
     this.router.navigateByUrl("/question-amrican")

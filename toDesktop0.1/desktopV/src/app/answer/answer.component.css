@@ -43,3 +43,22 @@
     color: white;
     transform: rotateY(180deg);
   }
+
+/* טסט */
+  ngx-flip{
+    height: 200px;
+    width: 200px;
+}
+    .front{
+      background-color: lightgreen;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .back{
+      background-color: lightblue;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+    }

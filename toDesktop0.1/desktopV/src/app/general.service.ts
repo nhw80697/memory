@@ -25,6 +25,7 @@ export class GeneralService {
 
 
         category = "";
+        page = "";
         asksQuestion = true;
-        questionsToShow = {cat: ""}
+        questionsToShow = {cat: "", sub: ""}
 }

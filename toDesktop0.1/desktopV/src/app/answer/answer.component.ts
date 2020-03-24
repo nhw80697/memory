@@ -12,13 +12,14 @@ import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
   
 })
 export class AnswerComponent implements OnInit {
-
-  question = "";
-  answer = "";
+  i = 0;
   posts:any;
   messege = "";
   currentRate = 0;
-  
+  question1 = "";
+  answer1 = "";
+  thereQuestions = false;
+
   constructor(private router: Router, private generalService: GeneralService,private config: NgbRatingConfig) { 
     config.max = 3;
   }
@@ -33,19 +34,41 @@ export class AnswerComponent implements OnInit {
         if(this.posts.length == 0){
           this.messege = "לא נמצאו שאלות בנושא המבוקש";
         }else{
+          this.thereQuestions = true;
           this.messege = "נמצאו" + " " + this.posts.length +  " " + "שאלות "
         }
-
+        this.question1 = this.posts[this.i].addPost.question;
+        this.answer1 = this.posts[this.i].addPost.answer;
        
     
   }
     )}
+
+    
 
 
   
 
   ngOnInit(): void {
     this.Answer();
+  }
+
+  flip = false;
+  rotate() {
+    this.flip = !this.flip;
+  }
+
+  next(){
+    if (this.i < this.posts.length - 1){this.i ++};
+    this.question1 = this.posts[this.i].addPost.question;
+        this.answer1 = this.posts[this.i].addPost.answer;
+        this.flip = false;
+  }
+
+  back(){
+    if (this.i >= 1){ this.i --};
+    this.question1 = this.posts[this.i].addPost.question;
+        this.answer1 = this.posts[this.i].addPost.answer;
   }
 
 }
