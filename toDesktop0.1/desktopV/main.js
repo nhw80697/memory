@@ -13,6 +13,8 @@ function createWindow () {
     }
   })
 
+  mainWindow.setMenuBarVisibility(false);
+  
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, `/dist/index.html`),
@@ -27,6 +29,7 @@ function createWindow () {
     mainWindow = null
   })
 }
+
 
 app.on('ready', createWindow)
 

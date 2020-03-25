@@ -5,7 +5,7 @@
 	<div class="col-md-4 col-xs-4" >
 		<h3 style="text-align: center;">בחר נושא:</h3>
 		<p>{{category}}</p>
-		<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" dir="rtl" >
+		<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" dir="rtl" style="max-height: 400px; overflow-y: scroll;">
 			<!-- This is the tree node template for leaf nodes -->
 			<mat-tree-node *matTreeNodeDef="let node"  style=" display: inline;">
 			  <!-- use a disabled button to provide padding for tree leaf -->
@@ -29,7 +29,7 @@
 	
 		<mat-menu #menu="matMenu">
 			<div *ngFor="let p of copyPages">
-				<button name="{{p}}" mat-menu-item (click)="selectPage($event)">{{p}}</button>
+				<button name="{{p}}" mat-menu-item (click)="selectPage($event)">דף {{p}}</button>
 			</div>
 		  </mat-menu>
 

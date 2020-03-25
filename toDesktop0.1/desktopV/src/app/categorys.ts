@@ -17,7 +17,6 @@ import { GeneralService } from './general.service';
               {name: 'שבת'},
               {name: 'עירובין'},
               {name: 'פסחים'},
-              {name: 'שקלים'},
               {name: 'ראש השנה'},
               {name: 'יומא'},
               {name: 'סוכה'},
@@ -51,6 +50,24 @@ import { GeneralService } from './general.service';
               {name: 'הוריות'},
             ]
           },
+          {name: 'קדשים',
+          children: [
+            {name: 'זבחים'},
+            {name: 'מנחות'},
+            {name: 'חולין'},
+            {name: 'בכורות'},
+            {name: 'ערכין'},
+            {name: 'תמורה'},
+            {name: 'כריתות'},
+            {name: 'מעילה'},
+            {name: 'תמיד'}
+          ]
+        },
+        {name: 'טהרות',
+          children: [
+            {name: 'נידה'},
+          ]
+        },
           ]
         }, {
           name: 'הלכה',

@@ -27,5 +27,6 @@ export class GeneralService {
         category = "";
         page = "";
         asksQuestion = true;
-        questionsToShow = {cat: "", sub: ""}
+        questionsToShow = {cat: "", sub: ""};
+        grade:number = 0;
 }

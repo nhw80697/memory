@@ -8,9 +8,13 @@
     font-family: EFT_Lampner;
 }
 
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
 body{
     direction: rtl;
-    
+    overflow:hidden;
     /* overflow: Hidden; */
 
 

@@ -47,7 +47,7 @@
 /* טסט */
   ngx-flip{
     height: 200px;
-    width: 200px;
+    width: 100%;
 }
     .front{
       background-color: lightgreen;
